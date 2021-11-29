@@ -1,1 +1,192 @@
-GuMei is Google's Chinese sister.
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<title>Photos by Gumei</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="assets/styles/font-awesome.min.css">
+<style>
+    body,
+    h1 {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    img {
+        margin-bottom: -7px;
+        width: 100%;
+    }
+
+    img:hover {
+        opacity: 0.6;
+        transition: 0.3s
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px;
+    }
+</style>
+
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+       class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+        <i class="fa fa-remove"></i>
+    </a>
+    <div class="w3-bar-block w3-center">
+        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
+        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
+        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+    </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+    <!-- Header -->
+    <div class="w3-opacity">
+        <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-clear"></div>
+        <header class="w3-center w3-margin-bottom">
+            <h1><b>GuMei</b></h1>
+            <p><b>A photographer's view in earth.</b></p>
+            <p class="w3-padding-16">
+                <button class="w3-button w3-light-gray" onclick="myFunction()">Toggle Grid
+                    Padding
+                </button>
+            </p>
+        </header>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="w3-row" id="myGrid" style="margin-bottom:128px">
+        <div class="w3-third">
+            <img src="photos/Gumei.xyz_1.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_2.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_3.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_4.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_5.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_6.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_7.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_8.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_9.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_10.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_11.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_12.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_13.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_14.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_15.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_16.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_17.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_18.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_19.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_20.jpg" alt="Gumei's work" onclick="onClick(this)">
+        </div>
+        <div class="w3-third">
+            <img src="photos/Gumei.xyz_21.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_22.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_23.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_24.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_25.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_26.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_27.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_28.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_29.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_30.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_31.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_32.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_33.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_34.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_35.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_36.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_37.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_38.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_39.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_40.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_61.jpg" alt="Gumei's work" onclick="onClick(this)">
+        </div>
+        <div class="w3-third">
+            <img src="photos/Gumei.xyz_41.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_42.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_43.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_44.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_45.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_46.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_47.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_48.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_49.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_50.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_51.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_52.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_53.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_54.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_55.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_56.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_57.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_58.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_59.jpg" alt="Gumei's work" onclick="onClick(this)">
+            <img src="photos/Gumei.xyz_60.jpg" alt="Gumei's work" onclick="onClick(this)">
+        </div>
+    </div>
+    <!-- End Page Content -->
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+    <!--    <i class="fa fa-facebook-official w3-hover-opacity"></i>-->
+    <!--    <i class="fa fa-instagram w3-hover-opacity"></i>-->
+    <!--    <i class="fa fa-snapchat w3-hover-opacity"></i>-->
+    <!--    <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
+    <!--    <i class="fa fa-twitter w3-hover-opacity"></i>-->
+    <!--    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+    <p class="w3-medium">Powered by <a href="https://mingfei.li" target="_blank" class="w3-hover-text-green">Mingfei</a>
+    </p>
+</footer>
+
+<script>
+    // Toggle grid padding
+    function myFunction() {
+        var x = document.getElementById("myGrid");
+        if (x.className === "w3-row") {
+            x.className = "w3-row-padding";
+        } else {
+            x.className = x.className.replace("w3-row-padding", "w3-row");
+        }
+    }
+
+    // Open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+
+</script>
+
+</body>
+
+</html>
