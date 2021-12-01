@@ -29,19 +29,25 @@
 
 <body>
 
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()"
-       class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
-        <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
-    </div>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
+     style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+    <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
 </nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">Gumei.xyz</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+     id="myOverlay"></div>
+
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
@@ -142,19 +148,72 @@
         <p id="caption"></p>
     </div>
 </div>
+<!-- About section -->
+<div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h4><b>About Me</b></h4>
+    <img src="photos/Gumei.xyz_34.jpg" alt="Me" class="w3-image w3-padding-32" style="width: 600px;">
+    <div class="w3-content w3-justify" style="max-width:600px">
+        <h4>My Name</h4>
+        <p>Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>mail: <a href="mailto:example@example.com">example@example.com</a></p>
+        <p>tel: 5353 35531</p>
+        <hr class="w3-opacity">
+        <h4 class="w3-padding-16">Technical Skills</h4>
+        <p class="w3-wide">Photography</p>
+        <div class="w3-white">
+            <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
+        </div>
+        <p class="w3-wide">Web Design</p>
+        <div class="w3-white">
+            <div class="w3-container w3-padding-small w3-center w3-grey" style="width:99%">99%</div>
+        </div>
+        <p class="w3-wide">Photoshop</p>
+        <div class="w3-white">
+            <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+        </div>
+        <p>
+            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom w3-hover-black">
+                Download Resume
+            </button>
+        </p>
+    </div>
+</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
-    <!--    <i class="fa fa-facebook-official w3-hover-opacity"></i>-->
-    <!--    <i class="fa fa-instagram w3-hover-opacity"></i>-->
-    <!--    <i class="fa fa-snapchat w3-hover-opacity"></i>-->
-    <!--    <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
-    <!--    <i class="fa fa-twitter w3-hover-opacity"></i>-->
-    <!--    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
-    <p class="w3-medium">Powered by <a href="https://mingfei.li" target="_blank" class="w3-hover-text-green">Mingfei</a>
-    </p>
-</footer>
+<!-- Contact section -->
+<div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+    <div class="w3-content" style="max-width:600px">
+        <h4 class="w3-center"><b>Contact Me</b></h4>
+        <p>Wanna me to photograph you? Fill out the form and fill me in with the details.</p>
+        <form action="/action_page.php" target="_blank">
+            <div class="w3-section">
+                <label>Name</label>
+                <input class="w3-input w3-border" type="text" name="Name" required>
+            </div>
+            <div class="w3-section">
+                <label>Email</label>
+                <input class="w3-input w3-border" type="text" name="Email" required>
+            </div>
+            <div class="w3-section">
+                <label>Message</label>
+                <input class="w3-input w3-border" type="text" name="Message" required>
+            </div>
+            <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+        </form>
+    </div>
+</div>
 
+<!--footer-->
+<div class="w3-black w3-center w3-padding-24">
+    Powered by <a href="https://mingfei.li" title="Mingfei" target="_blank" class="w3-hover-opacity">Mingfei</a>
+</div>
 <script>
     // Toggle grid padding
     function myFunction() {
