@@ -33,18 +33,18 @@
             url: '/assets/data',
             dataType: 'text',
             success: function (data) {
-                var line = data.split('\r\n');
-                var amount = parseInt(line[0]);
-                var quotient = Math.floor(amount / 3);
-                var remainder = amount % 3;
-                var prefix = '<img src="photos/Gumei.xyz_';
-                var inffix = '.jpg" alt="';
-                var suffix = '">';
-                var html1 = '', html2 = '', html3 = '';
-                for (var i = 1; i <= quotient; i++) {
-                    html1 += prefix + i + inffix + line[i] + suffix;
-                    html2 += prefix + (i + quotient) + inffix + line[i + quotient] + suffix;
-                    html3 += prefix + (i + quotient * 2) + inffix + line[i + quotient * 2] + suffix;
+                let line = data.split('\r\n');
+                let amount = parseInt(line[0]);
+                let quotient = Math.floor(amount / 3);
+                let remainder = amount % 3;
+                let prefix = '<img src="photos/Gumei.xyz_';
+                let infix = '.jpg" alt="';
+                let suffix = '">';
+                let html1 = '', html2 = '', html3 = '';
+                for (let i = 1; i <= quotient; i++) {
+                    html1 += prefix + i + infix + line[i] + suffix;
+                    html2 += prefix + (i + quotient) + infix + line[i + quotient] + suffix;
+                    html3 += prefix + (i + quotient * 2) + infix + line[i + quotient * 2] + suffix;
                 }
                 $('#col-1').html(html1);
                 $('#col-2').html(html2);
@@ -53,10 +53,11 @@
         });
 
         $('.w3-row').on("click", 'img', function () {
+            console.log('-------')
             console.log($(this).attr('alt'));
-            $('#img').attr('src', $(this).attr('src'));
-            $('#modal').css('display', 'block');
-            $('#caption').html($(this).attr('alt'));
+            // $('#img').attr('src', $(this).attr('src'));
+            // $('#modal').css('display', 'block');
+            // $('#caption').text($(this).attr('alt'));
 
         });
     })
@@ -193,7 +194,7 @@
 <script>
     // Toggle grid padding
     function myFunction() {
-        var x = document.getElementById("myGrid");
+        let x = document.getElementById("myGrid");
         if (x.className === "w3-row") {
             x.className = "w3-row-padding";
         } else {
