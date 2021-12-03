@@ -33,6 +33,7 @@
             url: '/assets/data',
             dataType: 'text',
             success: function (data) {
+                console.log(data);
                 let line = data.split('\r\n');
                 console.log(line[1]);
                 let amount = parseInt(line[0]);
