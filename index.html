@@ -34,6 +34,7 @@
             dataType: 'text',
             success: function (data) {
                 let line = data.split('\r\n');
+                console.log(line[1]);
                 let amount = parseInt(line[0]);
                 let quotient = Math.floor(amount / 3);
                 let remainder = amount % 3;
