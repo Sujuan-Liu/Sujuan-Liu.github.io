@@ -34,28 +34,33 @@
             dataType: 'text',
             success: function (data) {
                 var line = data.split('\r\n');
-                console.log(line);
-                console.log('0' + line[0]);
-                console.log('1' + line[1]);
                 var amount = parseInt(line[0]);
                 var quotient = Math.floor(amount / 3);
                 var remainder = amount % 3;
-                console.log(quotient + ' ' + remainder);
-                var start = '<img src="photos/Gumei.xyz_';
-                var middle = '.jpg" alt="';
-                var end = '" onclick="onClick(this)">';
+                var prefix = '<img src="photos/Gumei.xyz_';
+                var inffix = '.jpg" alt="';
+                var suffix = '">';
                 var html1 = '', html2 = '', html3 = '';
                 for (var i = 1; i <= quotient; i++) {
-                    html1 += start + i + middle + line[i] + end;
-                    html2 += start + (i + quotient) + middle + line[i + quotient] + end;
-                    html3 += start + (i + quotient * 2) + middle + line[i + quotient * 2] + end;
+                    html1 += prefix + i + inffix + line[i] + suffix;
+                    html2 += prefix + (i + quotient) + inffix + line[i + quotient] + suffix;
+                    html3 += prefix + (i + quotient * 2) + inffix + line[i + quotient * 2] + suffix;
                 }
                 $('#col-1').html(html1);
                 $('#col-2').html(html2);
                 $('#col-3').html(html3);
             }
         });
-    });
+
+        $('.w3-row').on("click", 'img', function () {
+            console.log($(this).attr('alt'));
+            $('#img').attr('src', $(this).attr('src'));
+            $('#modal').css('display', 'block');
+            $('#caption').html($(this).attr('alt'));
+
+        });
+    })
+    ;
 </script>
 <body>
 
@@ -112,10 +117,10 @@
 </div>
 
 <!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+<div id="modal" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
     <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
     <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-        <img id="img01" class="w3-image">
+        <img id="img" class="w3-image">
         <p id="caption"></p>
     </div>
 </div>
@@ -205,16 +210,6 @@
     function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
     }
-
-
-    // Modal Image Gallery
-    function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-    }
-
 </script>
 
 </body>
