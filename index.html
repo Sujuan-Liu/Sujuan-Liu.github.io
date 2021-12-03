@@ -34,10 +34,10 @@
             dataType: 'text',
             success: function (data) {
                 console.log(data);
-                let line = data.split('\r\n');
-                console.log(line);
-                console.log(line[1]);
-                let amount = parseInt(line[0]);
+                let lines = data.match(/[^\r\n]+/g);
+                console.log(lines);
+                console.log(lines[1]);
+                let amount = parseInt(lines[0]);
                 let quotient = Math.floor(amount / 3);
                 let remainder = amount % 3;
                 let prefix = '<img src="photos/Gumei.xyz_';
@@ -45,9 +45,9 @@
                 let suffix = '">';
                 let html1 = '', html2 = '', html3 = '';
                 for (let i = 1; i <= quotient; i++) {
-                    html1 += prefix + i + infix + line[i] + suffix;
-                    html2 += prefix + (i + quotient) + infix + line[i + quotient] + suffix;
-                    html3 += prefix + (i + quotient * 2) + infix + line[i + quotient * 2] + suffix;
+                    html1 += prefix + i + infix + lines[i] + suffix;
+                    html2 += prefix + (i + quotient) + infix + lines[i + quotient] + suffix;
+                    html3 += prefix + (i + quotient * 2) + infix + lines[i + quotient * 2] + suffix;
                 }
                 $('#col-1').html(html1);
                 $('#col-2').html(html2);
