@@ -35,6 +35,7 @@
             success: function (data) {
                 console.log(data);
                 let line = data.split('\r\n');
+                console.log(line);
                 console.log(line[1]);
                 let amount = parseInt(line[0]);
                 let quotient = Math.floor(amount / 3);
