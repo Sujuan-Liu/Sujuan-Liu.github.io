@@ -26,7 +26,37 @@
         margin-bottom: 12px;
     }
 </style>
-
+<script src="assets/scripts/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url: 'assets/data',
+            dataType: 'text',
+            success: function (data) {
+                var line = data.split('\r\n');
+                console.log(line);
+                console.log('0' + line[0]);
+                console.log('1' + line[1]);
+                var amount = parseInt(line[0]);
+                var quotient = Math.floor(amount / 3);
+                var remainder = amount % 3;
+                console.log(quotient + ' ' + remainder);
+                var start = '<img src="photos/Gumei.xyz_';
+                var middle = '.jpg" alt="';
+                var end = '" onclick="onClick(this)">';
+                var html1 = '', html2 = '', html3 = '';
+                for (var i = 1; i <= quotient; i++) {
+                    html1 += start + i + middle + line[i] + end;
+                    html2 += start + (i + quotient) + middle + line[i + quotient] + end;
+                    html3 += start + (i + quotient * 2) + middle + line[i + quotient * 2] + end;
+                }
+                $('#col-1').html(html1);
+                $('#col-2').html(html2);
+                $('#col-3').html(html3);
+            }
+        });
+    });
+</script>
 <body>
 
 <!-- Sidebar/menu -->
@@ -56,7 +86,7 @@
     <div class="w3-opacity">
         <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
         <div class="w3-clear"></div>
-        <header class="w3-center w3-margin-bottom">
+        <header class="w3-center w3-margin-bottom w3-margin-top">
             <h1><b>GuMei</b></h1>
             <p><b>An E.T. photographer's view on earth.</b></p>
             <p class="w3-padding-16">
@@ -69,72 +99,13 @@
 
     <!-- Photo Grid -->
     <div class="w3-row" id="myGrid" style="margin-bottom:128px">
-        <div class="w3-third">
-            <img src="photos/Gumei.xyz_1.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_2.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_3.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_4.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_5.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_6.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_7.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_8.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_9.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_10.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_11.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_12.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_13.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_14.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_15.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_16.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_17.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_18.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_19.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_20.jpg" alt="Gumei's work" onclick="onClick(this)">
+        <div id="col-1" class="w3-third">
+
         </div>
-        <div class="w3-third">
-            <img src="photos/Gumei.xyz_21.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_22.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_23.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_24.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_25.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_26.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_27.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_28.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_29.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_30.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_31.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_32.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_33.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_34.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_35.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_36.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_37.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_38.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_39.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_40.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_61.jpg" alt="Gumei's work" onclick="onClick(this)">
+        <div id="col-2" class="w3-third">
+
         </div>
-        <div class="w3-third">
-            <img src="photos/Gumei.xyz_41.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_42.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_43.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_44.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_45.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_46.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_47.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_48.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_49.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_50.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_51.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_52.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_53.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_54.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_55.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_56.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_57.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_58.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_59.jpg" alt="Gumei's work" onclick="onClick(this)">
-            <img src="photos/Gumei.xyz_60.jpg" alt="Gumei's work" onclick="onClick(this)">
+        <div id="col-3" class="w3-third">
         </div>
     </div>
     <!-- End Page Content -->
