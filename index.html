@@ -34,7 +34,7 @@
             dataType: 'text',
             success: function (data) {
                 console.log(data);
-                let lines = data.match(/[^\r\n]+/g);
+                let lines = data.match(/[^\r\n]+/g); // windows vs UNIX
                 console.log(lines);
                 console.log(lines[1]);
                 let amount = parseInt(lines[0]);
@@ -56,12 +56,9 @@
         });
 
         $('.w3-row').on("click", 'img', function () {
-            console.log('-------')
-            console.log($(this).attr('alt'));
-            // $('#img').attr('src', $(this).attr('src'));
-            // $('#modal').css('display', 'block');
-            // $('#caption').text($(this).attr('alt'));
-
+            $('#img').attr('src', $(this).attr('src'));
+            $('#modal').css('display', 'block');
+            $('#caption').text($(this).attr('alt'));
         });
     })
     ;
